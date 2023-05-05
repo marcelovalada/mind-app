@@ -4,6 +4,10 @@ class ContentsController < ApplicationController
       @contents = current_user.contents
     end
 
+    def new
+      @content = Content.new
+    end
+
     # def show
     # end
 
