@@ -24,17 +24,27 @@ class ContentsController < ApplicationController
       @content = Content.find(params[:id])
     end
 
+    def update
+      @content = Content.find(params[:id])
+
+      if @content.update(content_params)
+        redirect_to contents_path, notice: 'Content successfully updated'
+      else
+        render :edit
+      end
+    end
+
+    def show
+      @content = Content.find(params[:id])
+    end
+
     private
 
     def content_params
       params.require(:content).permit(:title, :description)
     end
 
-    # def show
-    # end
 
-    # def update
-    # end
 
     # def destroy
     # end
