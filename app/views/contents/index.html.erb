@@ -7,6 +7,7 @@
     <li>Title: <%= content.title %><br>Description: <%= content.description %>  </li>
     <%= link_to 'Edit', edit_content_path(content) %>
     <%= link_to 'Show', content_path(content) %>
+    <%= link_to 'Destroy', content_path(content), method: :delete, data: { confirm: 'Are you sure?'} %>
   </ul>
 
 <% end %>
